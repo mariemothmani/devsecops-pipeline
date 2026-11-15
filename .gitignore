@@ -1,3 +1,8 @@
 minikube-linux-amd64
 target/
 talisman_report/
+.env
+.idea/
+.settings/
+.classpath
+.project
