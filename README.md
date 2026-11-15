@@ -57,7 +57,7 @@ No secret is stored in the pipeline code. Every sensitive value goes through the
 | Kubeconfig | `kubeconfig-k8s` (file credential) |
 | GitHub access | `github-pat` |
 
-Docker credentials are passed with `--password-stdin` and shell tracing is disabled around the login, so they never appear in build logs.
+Docker credentials are passed with `--password-stdin` and shell tracing is disabled around the login, so they never appear in build logs. For local runs, database credentials are read from a `.env` file that is ignored by Git; `.env.example` lists the expected variables.
 
 ## Repository structure
 
@@ -67,6 +67,7 @@ Docker credentials are passed with `--password-stdin` and shell tracing is disab
 ├── gauntlt/nmap.attack  # Security acceptance scenario
 ├── Dockerfile
 ├── docker-compose.yml   # Local stack (app + MySQL)
+├── .env.example         # Variables for docker-compose (copy to .env)
 ├── pom.xml              # Maven build, Dependency-Check, Actuator/Micrometer
 └── src/                 # Spring Boot application + unit tests
 ```
